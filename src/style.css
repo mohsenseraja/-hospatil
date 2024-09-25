@@ -1,0 +1,60 @@
+body {
+    direction: rtl;
+    text-align: right;
+    background-color: #f8f9fa;
+}
+
+.hospital-card {
+    margin-bottom: 20px;
+}
+
+.status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.status-green {
+    background-color: #28a745;
+}
+
+.status-red {
+    background-color: #dc3545;
+}
+
+.status-yellow {
+    background-color: #ffc107;
+}
+
+h1 {
+    color: #007bff;
+    font-size: 2.5rem;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.interactive-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+/* تعديل أيقونات المستشفيات لتكون 3 في صف واحد */
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.col-md-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+

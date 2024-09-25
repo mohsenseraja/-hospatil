@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - أقسام الطوارئ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- رابط لملف CSS -->
+</head>
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Emergency Dept Dashboard</h1>
+        <p class="text-center">Data Current To: 25/09/2024 16:00</p>
+        <p class="text-center">Status # Excludes high priority cases</p>
+
+        <!-- كروت المستشفيات -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card hospital-card">
+                    <div class="card-body">
+                        <h3 class="card-title">مستشفى الملك عبدالعزيز</h3>
+                        <p class="card-text">حالة قسم الطوارئ:</p>
+                        <div class="status-indicator status-green"></div> <span>الحالة: طبيعية</span>
+                        <ul class="list-unstyled mt-3">
+                            <li>عدد المرضى الحاليين: 25</li>
+                            <li>عدد الغرف المتاحة: 5</li>
+                            <li>متوسط وقت الانتظار: 30 دقيقة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card hospital-card">
+                    <div class="card-body">
+                        <h3 class="card-title">مستشفى الملك فيصل</h3>
+                        <p class="card-text">حالة قسم الطوارئ:</p>
+                        <div class="status-indicator status-yellow"></div> <span>الحالة: متوسطة</span>
+                        <ul class="list-unstyled mt-3">
+                            <li>عدد المرضى الحاليين: 40</li>
+                            <li>عدد الغرف المتاحة: 2</li>
+                            <li>متوسط وقت الانتظار: 45 دقيقة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card hospital-card">
+                    <div class="card-body">
+                        <h3 class="card-title">مستشفى الأمير منصور</h3>
+                        <p class="card-text">حالة قسم الطوارئ:</p>
+                        <div class="status-indicator status-red"></div> <span>الحالة: مكتظة</span>
+                        <ul class="list-unstyled mt-3">
+                            <li>عدد المرضى الحاليين: 60</li>
+                            <li>عدد الغرف المتاحة: 0</li>
+                            <li>متوسط وقت الانتظار: 90 دقيقة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- جدول البيانات العامة -->
+        <table class="table table-bordered text-center interactive-table mt-4">
+            <thead>
+                <tr>
+                    <th>Hosp</th>
+                    <th>EA</th>
+                    <th>WTBS</th>
+                    <th>Com Treat</th>
+                    <th>CAP</th>
+                    <th>Avg wait (min) #</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total</td>
+                    <td>35</td>
+                    <td>75</td>
+                    <td>356</td>
+                    <td>332</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>FMC</td>
+                    <td>7</td>
+                    <td>19</td>
+                    <td>72</td>
+                    <td>63</td>
+                    <td>119</td>
+                </tr>
+                <!-- بقية البيانات -->
+            </tbody>
+        </table>
+
+        <!-- شارت البيانات -->
+        <canvas id="hospitalsChart" width="400" height="200"></canvas>
+        <canvas id="heatmapChart" width="400" height="200" class="mt-4"></canvas>
+
+        <!-- توقعات الحالات بناءً على المواسم -->
+        <h3 class="mt-5">توقعات الحالات التدفقيه المستقبليه حسب المواسم</h3>
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>الموسم</th>
+                    <th>عدد الحالات المتوقعة</th>
+                    <th>الأمراض الأكثر شيوعًا</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>الشتاء</td>
+                    <td>150</td>
+                    <td>الإنفلونزا، نزلات البرد</td>
+                </tr>
+                <tr>
+                    <td>الربيع</td>
+                    <td>100</td>
+                    <td>الحساسية الموسمية، الربو</td>
+                </tr>
+                <tr>
+                    <td>الصيف</td>
+                    <td>200</td>
+                    <td>ضربات الشمس، الجفاف</td>
+                </tr>
+                <tr>
+                    <td>الخريف</td>
+                    <td>120</td>
+                    <td>نزلات البرد، الالتهابات التنفسية</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script> <!-- رابط لملف JavaScript -->
+</body>
+</html>

@@ -43,7 +43,7 @@ const heatmapChart = new Chart(heatmapCtx, {
                 { x: 1, y: 1, r: 43 },  // 2-4 hours
                 { x: 2, y: 2, r: 12 },  // 4-8 hours
                 { x: 3, y: 3, r: 53 },  // 8-12 hours
-                { x: 4, y: 4, r: 64 }   // 12-24 4
+                { x: 4, y: 4, r: 64 }   // 12-24 hours
             ],
             backgroundColor: function(context) {
                 const value = context.raw.r;
@@ -79,4 +79,43 @@ const heatmapChart = new Chart(heatmapCtx, {
             }
         }
     }
+});
+
+// سكريبت الشرح باستخدام Intro.js
+document.getElementById('startTutorial').addEventListener('click', function() {
+    introJs().setOptions({
+        steps: [
+            {
+                intro: "مرحبًا! سأشرح لك عناصر لوحة التحكم هذه."
+            },
+            {
+                element: document.querySelector('h1'),
+                intro: "هذا هو عنوان لوحة التحكم، يُظهر اسم لوحة قسم الطوارئ."
+            },
+            {
+                element: document.querySelector('.card:nth-child(1)'),
+                intro: "هذه البطاقة تُظهر حالة مستشفى الملك عبدالعزيز."
+            },
+            {
+                element: document.querySelector('.card:nth-child(2)'),
+                intro: "وهذه البطاقة تُظهر حالة مستشفى الملك فيصل."
+            },
+            {
+                element: document.querySelector('.card:nth-child(3)'),
+                intro: "أما هذه، فهي تعرض حالة مستشفى الأمير منصور."
+            },
+            {
+                element: document.querySelector('.interactive-table'),
+                intro: "هنا تجد الجدول الذي يعرض معلومات عن حالات الطوارئ مثل القبولات والحالات المكتملة."
+            },
+            {
+                element: document.querySelector('#hospitalsChart'),
+                intro: "هنا لدينا الرسم البياني الذي يوضح متوسط أوقات الانتظار في مختلف المستشفيات."
+            },
+            {
+                element: document.querySelector('#heatmapChart'),
+                intro: "وأخيرًا، هذا هو الشارت الحراري الذي يعرض أوقات انتظار مختلفة باستخدام الألوان."
+            }
+        ]
+    }).start();
 });

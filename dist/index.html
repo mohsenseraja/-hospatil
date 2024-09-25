@@ -2,8 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Emergency Dept Dashboard
-</title>
+  <title>CodePen - Untitled</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -17,8 +16,13 @@
     <title>لوحة التحكم - أقسام الطوارئ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- رابط لملف CSS -->
+    <!-- إضافة مكتبة Intro.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
 </head>
 <body>
+
+    <!-- زر لبدء الشرح -->
+    <button id="startTutorial" class="btn btn-primary mb-4">ابدأ الشرح</button>
 
     <div class="container my-5">
         <h1 class="text-center mb-4">Emergency Dept Dashboard</h1>
@@ -82,7 +86,7 @@
                     <th>WTBS</th>
                     <th>Com Treat</th>
                     <th>CAP</th>
-                    <th>Section Names</th>#</th>
+                    <th>Avg wait (min) #</th>
                 </tr>
             </thead>
             <tbody>
@@ -92,7 +96,7 @@
                     <td>75</td>
                     <td>356</td>
                     <td>332</td>
-                    <td>قسم الاشعة</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>FMC</td>
@@ -100,7 +104,7 @@
                     <td>19</td>
                     <td>72</td>
                     <td>63</td>
-                    <td>غرفة الانتظار</td>
+                    <td>119</td>
                 </tr>
                 <!-- بقية البيانات -->
             </tbody>
@@ -116,7 +120,7 @@
             <thead>
                 <tr>
                     <th>الموسم</th>
-                    <th> عدد الحالات المتوقعة لكل 12 ساعة</th>
+                    <th>عدد الحالات المتوقعة</th>
                     <th>الأمراض الأكثر شيوعًا</th>
                 </tr>
             </thead>
@@ -147,6 +151,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js"></script>
     <script src="scripts.js"></script> <!-- رابط لملف JavaScript -->
 </body>
 </html>
